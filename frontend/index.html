@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html ng-app="FlagApp">
+<head>
+  <title>Candidate Evaluation</title>
+  <link rel="stylesheet" href="https://unpkg.com/primeui/themes/saga-blue/theme.css" />
+  <link rel="stylesheet" href="https://unpkg.com/primeui/primeui.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body ng-controller="MainController as vm">
+
+  <div class="container">
+    <h2>Candidate Evaluation Form</h2>
+
+    <form ng-submit="vm.evaluateCandidate()">
+      <label>Name:</label>
+      <input type="text" ng-model="vm.candidate.name" required />
+
+      <label>NAC Score:</label>
+      <input type="number" ng-model="vm.candidate.nacScore" />
+
+      <label>MCCQE1 Score:</label>
+      <input type="number" ng-model="vm.candidate.mccqe1Score" />
+
+      <label>Canadian Experience:</label>
+      <input type="checkbox" ng-model="vm.candidate.hasCanadianExperience" />
+
+      <label>Practice Gap (years):</label>
+      <input type="number" ng-model="vm.candidate.practiceGapInYears" />
+
+      <button type="submit">Evaluate</button>
+    </form>
+
+    <h3>Triggered Flags</h3>
+    <div ng-if="vm.flags.length === 0">No flags found.</div>
+
+    <table ng-if="vm.flags.length > 0">
+      <tr>
+        <th>Field</th>
+        <th>Message</th>
+        <th>Severity</th>
+        <th>Override</th>
+      </tr>
+      <label>Filter by Severity:</label>
+<select ng-model="vm.filterSeverity">
+  <option value="">All</option>
+  <option value="high">High</option>
+  <option value="medium">Medium</option>
+  <option value="low">Low</option>
+</select>
+
+<tr ng-repeat="flag in vm.flags | filter:{severity: vm.filterSeverity}">
+
+        <td>{{flag.field}}</td>
+        <td>{{flag.message}}</td>
+        <td><span class="severity-badge {{flag.severity}}">{{flag.severity}}</span></td>
+        <td><button ng-click="vm.overrideFlag(flag)">Override</button></td>
+        <td>{{ flag.overridden ? "Overridden" : "Active" }}</td>
+        <button ng-click="vm.exportFlags()">Export Flags (JSON)</button>
+
+      </tr>      
+      
+    </table>
+  </div>
+
+  <th>Status</th>
+
+
+  <!-- Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+  <script src="app/app.module.js"></script>
+  <script src="app/app.controller.js"></script>
+  <script src="app/app.service.js"></script>
+</body>
+</html>
