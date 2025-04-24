@@ -1,36 +1,25 @@
-# 🌐 portal-pro
+# PRO Portal Flagging System
 
-A streamlined web portal solution designed to enhance workflow and manage operations with clarity and efficiency.
+This project was developed as part of the Summer Student Test for Touchstone Institute. The goal was to design and implement a prototype that improves the automatic flagging system used to review candidate applications for Practice Ready Ontario.
 
-## 🚀 Overview
+##  Overview
 
-`portal-pro` is a modern, modular web application that aims to provide an intuitive interface for users to interact with administrative features, process data, and visualize key insights. It is ideal for organizations seeking a customized internal portal.
+The system evaluates applicants based on criteria such as NAC exam score, MCCQE1 score, Canadian experience, and recent practice history. Based on this input, the system flags potential eligibility concerns using a customizable rule engine.
 
-> **Note:** This is an ongoing project and currently under active development.
+The final version includes both frontend and backend components with a working API, real-time flagging logic, and a clean user interface for reviewers to interact with and override flags if necessary.
 
-## 🧰 Features (Planned or In Progress)
+##  Technologies Used
 
-- 🔒 User authentication and role-based access
-- 📋 Dashboard for viewing flagged items and reports
-- ⚙️ Admin panel for managing system settings
-- 📈 Data visualization with filters and search
-- 🔔 Notification or alert system
-- 📁 Integration with external services or data sources
+- **Backend**: Node.js, Express, TypeScript
+- **Frontend**: AngularJS 1.x, PrimeNG
+- **Persistence**: Mock local storage (via `localStorage`)
+- **Tools**: Postman, Live Server (for local frontend preview), Git, VS Code
 
-## 🛠 Tech Stack
+##  How to Run
 
-| Category         | Technology                |
-|------------------|---------------------------|
-| Frontend         | AngularJS + PrimeNG       |
-| Backend          | Node.js + Express (TypeScript) |
-| Database         | MySQL                     |
-| Authentication   | JWT                       |
-| UI Framework     | PrimeNG                   |
-
-## 📦 Getting Started
-
-### 1. Clone the Repository
+### 1. Backend Setup
 
 ```bash
-git clone https://github.com/yourusername/portal-pro.git
-cd portal-pro
+cd backend
+npm install
+npm run dev
