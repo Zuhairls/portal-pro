@@ -2,7 +2,7 @@
 
 This project was developed as part of the Summer Student Test for Touchstone Institute. The goal was to design and implement a prototype that improves the automatic flagging system used to review candidate applications for Practice Ready Ontario.
 
----
+
 
 ##  Overview
 
@@ -15,7 +15,7 @@ The system evaluates applicants based on criteria such as:
 
 Based on this input, the system flags potential eligibility concerns using a customizable rule engine.
 
----
+
 
 ##  Key Features
 
@@ -26,7 +26,7 @@ Based on this input, the system flags potential eligibility concerns using a cus
 - Flag export to `.json`
 - Local storage persistence (mock database)
 
----
+
 
 ##  Technologies Used
 
@@ -45,7 +45,7 @@ Based on this input, the system flags potential eligibility concerns using a cus
 - Git
 - VS Code
 
----
+
 
 ##  How to Run
 
