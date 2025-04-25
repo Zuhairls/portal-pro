@@ -55,3 +55,8 @@ Based on this input, the system flags potential eligibility concerns using a cus
 cd backend
 npm install
 npm run dev
+```
+Backend runs at: http://localhost:3000
+
+### 2. Frontend Setup
+Open frontend/index.html in your browser after backend is running
